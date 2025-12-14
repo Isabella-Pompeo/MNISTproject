@@ -4,9 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MNIST</title>
-    <link rel="stylesheet" href="pagina02.css".css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.14.0/dist/tf.min.js"></script>
+    <script src="https://storage.googleapis.com/tfjs-models/tfjs/mnist_transfer_cnn_v1/mnist.js"></script>
+    <link rel="stylesheet" href="pagina02.css" />
   </head>
   <body>
-    <div></div>
+    <div id="drawing-area">
+      <canvas id="canvas-desenho" width="280" height="280"></canvas>
+    </div>
+
+    <button id="classify-btn">Classificar Dígito</button>
+    <button id="clear-btn">Limpar</button>
+
+    <div id="results">
+      <h3>Resultado da Classificação: <span id="prediction">?</span></h3>
+      <div id="chart-area"></div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

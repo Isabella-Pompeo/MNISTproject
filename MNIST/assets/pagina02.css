@@ -1,30 +1,111 @@
 @charset "UTF-8";
 
+/* Reset Básico: Essencial para remover margens e paddings nativos */
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(12, 24, 82);
+  background-color: rgb(12, 24, 82); /* Azul Escuro */
+  font-family: Arial, sans-serif;
+
+  /* Centralização principal */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  padding-top: 40px;
+  min-height: 100vh;
 }
 
-div {
-  display: inline-block;
-  height: 50px;
-  width: 80px;
-  background-color: rgb(61, 61, 61);
-  text-align: center;
-  justify-content: center;
+/* --- Layout Principal: O Contêiner Cinza (drawing-area) --- */
+#drawing-area {
+  /* Garante que o canvas fique centralizado dentro dele */
   display: flex;
+  justify-content: center;
   align-items: center;
-  display: inline-block;
-  border: 1px solid rgb(27, 255, 15);
-  height: 500px;
-  width: 700px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 25%;
+  flex-direction: column;
+
+  background-color: rgb(61, 61, 61); /* Fundo Cinza Escuro */
+  border: 3px solid rgb(27, 255, 15); /* Borda Verde Neon */
+  height: 350px; /* Altura ajustada para o canvas 280x280 */
+  width: 350px; /* Largura ajustada */
   border-radius: 20px;
+
+  /* Remove padding ou margin que possa deslocar o canvas */
+  padding: 0 !important; /* FORÇA O PADDING A SER ZERO */
+  margin: 0 !important; /* FORÇA O MARGIN A SER ZERO */
+  position: relative; /* Base para o z-index */
+  z-index: 1; /* Garante que esta área fique abaixo dos botões (se for o caso) */
+}
+
+/* --- O Canvas: Área de Desenho --- */
+#canvas-desenho {
+  border: none;
+  cursor: crosshair; /* Ícone que indica que pode desenhar */
+  display: block;
+  /* O Canvas está centralizado no pai, não precisa de margem aqui */
+}
+
+/* --- Botões --- */
+#classify-btn,
+#clear-btn {
+  padding: 10px 15px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgb(27, 255, 15); /* Verde Neon Sólido */
+  color: rgb(12, 24, 82); /* Texto Azul Escuro */
+  transition: background-color 0.2s;
+}
+
+#classify-btn:hover,
+#clear-btn:hover {
+  background-color: #00ff7f; /* Verde Neon mais claro */
+}
+
+/* --- Área de Resultados (Gráfico) --- */
+#results {
+  display: block;
+  width: 350px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgb(40, 40, 40);
+  border-radius: 10px;
+  color: white;
+}
+
+#results h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Destaque para a Previsão (o dígito mais provável) */
+#prediction {
+  color: #00ff7f;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* --- Estilos das Barras do Gráfico (chart-bar) --- */
+#chart-area {
+  width: 100%;
+}
+
+.chart-bar {
+  height: 18px;
+  margin: 4px 0;
+  padding-left: 5px;
+
+  background-color: rgba(0, 255, 127, 0.6); /* Verde Neon Transparente */
+  transition: width 0.3s ease-out;
+
+  color: #000;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+  white-space: nowrap;
 }

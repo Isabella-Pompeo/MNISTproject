@@ -27,8 +27,8 @@ body {
   align-items: center;
   flex-direction: column;
 
-  background-color: rgb(61, 61, 61); /* Fundo Cinza Escuro */
-  border: 3px solid rgb(27, 255, 15); /* Borda Verde Neon */
+  background-color: rgb(34, 34, 34); /* Fundo Cinza Escuro */
+  border: 3px solid rgb(146, 223, 21); /* Borda Verde Neon */
   height: 350px; /* Altura ajustada para o canvas 280x280 */
   width: 350px; /* Largura ajustada */
   border-radius: 20px;
@@ -57,14 +57,14 @@ body {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  background-color: rgb(27, 255, 15); /* Verde Neon Sólido */
+  background-color: rgb(146, 223, 21); /* Verde Neon Sólido */
   color: rgb(12, 24, 82); /* Texto Azul Escuro */
   transition: background-color 0.2s;
 }
 
 #classify-btn:hover,
 #clear-btn:hover {
-  background-color: #00ff7f; /* Verde Neon mais claro */
+  background-color: rgb(146, 223, 21); /* Verde Neon mais claro */
 }
 
 /* --- Área de Resultados (Gráfico) --- */
@@ -73,9 +73,9 @@ body {
   width: 350px;
   margin-top: 20px;
   padding: 15px;
-  background-color: rgb(40, 40, 40);
+  background-color: #d6d58e;
   border-radius: 10px;
-  color: white;
+  color: rgb(39, 59, 7);
 }
 
 #results h3 {
@@ -85,7 +85,7 @@ body {
 
 /* Destaque para a Previsão (o dígito mais provável) */
 #prediction {
-  color: #00ff7f;
+  color: rgb(83, 118, 27);
   font-size: 1.5em;
   font-weight: bold;
 }
@@ -100,7 +100,7 @@ body {
   margin: 4px 0;
   padding-left: 5px;
 
-  background-color: rgba(0, 255, 127, 0.6); /* Verde Neon Transparente */
+  background-color: rgb(83, 118, 27); /* Verde Neon Transparente */
   transition: width 0.3s ease-out;
 
   color: #000;

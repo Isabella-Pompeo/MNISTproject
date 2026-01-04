@@ -51,7 +51,7 @@ let canvas;
 let ctx;
 let isDrawing = false; // Flag para saber se o mouse está pressionado
 const LINE_WIDTH = 20; // Espessura da linha do desenho (importante para MNIST)
-const LINE_COLOR = "#00FF7F"; // Cor do desenho (MNIST usa branco sobre fundo escuro)
+const LINE_COLOR = "rgb(146, 223, 21)"; // Cor do desenho (MNIST usa branco sobre fundo escuro)
 
 // Função de inicialização
 function init() {
@@ -255,5 +255,25 @@ function preprocessCanvas(canvas) {
     const batched = normalized.expandDims(0);
 
     return batched;
+  });
+}
+
+function preprocessCanvas(canvas) {
+  return tf.tidy(() => {
+    // 1. Pega os 3 canais (RGB) para não perder a cor verde
+    let tensor = tf.browser.fromPixels(canvas, 3);
+
+    // 2. Converte para escala de cinza tirando a média dos canais (R+G+B)/3
+    // Isso garante que o verde apareça para o modelo como "branco"
+    let grayscale = tensor.mean(2).expandDims(-1);
+
+    // 3. Redimensiona para 28x28 (tamanho padrão do MNIST)
+    let resized = tf.image.resizeBilinear(grayscale, [28, 28]);
+
+    // 4. Normaliza os pixels para o intervalo [0, 1]
+    let normalized = resized.div(255.0);
+
+    // 5. Adiciona a dimensão de lote (batch): [1, 28, 28, 1]
+    return normalized.expandDims(0).toFloat();
   });
 }

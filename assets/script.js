@@ -1,8 +1,6 @@
 // Variável global para armazenar o modelo
 let model;
 
-// URL de um modelo MNIST pré-treinado (um modelo simples de camadas densas)
-// Onde esses modelos são armazenados? Em um servidor web (como o Google Storage) ou no seu próprio projeto.
 const MODEL_URL =
   "https://storage.googleapis.com/tfjs-models/tfjs/mnist_transfer_cnn_v1/model.json";
 

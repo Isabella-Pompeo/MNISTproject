@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: rgb(12, 24, 82); /* Azul Escuro */
+  background-color: #4a6d78; /* Azul Escuro */
   font-family: Arial, sans-serif;
 
   /* Centralização principal */
@@ -28,7 +28,7 @@ body {
   flex-direction: column;
 
   background-color: rgb(34, 34, 34); /* Fundo Cinza Escuro */
-  border: 3px solid rgb(146, 223, 21); /* Borda Verde Neon */
+  border: 3px solid #c3eb2c; /* Borda Verde Neon */
   height: 350px; /* Altura ajustada para o canvas 280x280 */
   width: 350px; /* Largura ajustada */
   border-radius: 20px;
@@ -57,14 +57,14 @@ body {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  background-color: rgb(146, 223, 21); /* Verde Neon Sólido */
+  background-color: #c3eb2c; /* Verde Neon Sólido */
   color: rgb(12, 24, 82); /* Texto Azul Escuro */
   transition: background-color 0.2s;
 }
 
 #classify-btn:hover,
 #clear-btn:hover {
-  background-color: rgb(146, 223, 21); /* Verde Neon mais claro */
+  background-color: #c3eb2c; /* Verde Neon mais claro */
 }
 
 /* --- Área de Resultados (Gráfico) --- */

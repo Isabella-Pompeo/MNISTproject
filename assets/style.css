@@ -30,6 +30,7 @@ body {
 
 .titulo-superior {
   color: #c3eb2c;
+  font-weight: 300;
   font-size: 20px;
   position: absolute;
   left: 50%;

@@ -12,6 +12,19 @@ body {
   overflow-x: hidden;
 }
 
+.numero-bg {
+  color: #c3eb2c;
+  font-family: "Courier New", Courier, monospace; /* Fonte mais "cheia" */
+  font-size: 28px; /* Aumentado de 14px para 28px */
+  font-weight: bold; /* Deixa o número mais visível */
+  opacity: 0.4; /* Aumentado para não sumir no fundo escuro */
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 5px rgba(195, 235, 44, 0.2)); /* Brilho suave */
+}
+
 /* Container para o texto principal "MNIST" */
 .container-principal {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;

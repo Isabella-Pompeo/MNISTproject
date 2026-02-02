@@ -81,7 +81,7 @@ function init() {
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   console.log(
-    "Diagnóstico 3: Canvas pintado de preto. Desenho deve ser Verde Neon."
+    "Diagnóstico 3: Canvas pintado de preto. Desenho deve ser Verde Neon.",
   );
 
   // 4. Configura os Event Listeners
@@ -130,7 +130,7 @@ function startDrawing(e) {
 
   // *** DIAGNÓSTICO 4 ***
   console.log(
-    `Diagnóstico 4: Desenho iniciado. Coordenadas (x, y): (${x}, ${y})`
+    `Diagnóstico 4: Desenho iniciado. Coordenadas (x, y): (${x}, ${y})`,
   );
 
   ctx.moveTo(x, y);
@@ -222,8 +222,8 @@ async function classifyDigit() {
   const topPrediction = probabilities.indexOf(Math.max(...probabilities));
   console.log(
     `Dígito previsto: ${topPrediction} com ${Math.round(
-      Math.max(...probabilities) * 100
-    )}% de confiança.`
+      Math.max(...probabilities) * 100,
+    )}% de confiança.`,
   );
 }
 
